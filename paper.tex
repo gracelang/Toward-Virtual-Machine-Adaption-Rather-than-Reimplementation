@@ -1,0 +1,171 @@
+
+
+% ---------------------------------------------------------------------------- %
+% Pre
+
+% Document
+\documentclass[10pt, preprint]{sigplanconf}
+
+% Standard
+\usepackage{hyperref}
+\usepackage[pass,letterpaper]{geometry}
+
+% Libraries for drawing
+\usepackage{graphicx}
+\usepackage{mathptmx}
+\usepackage[rgb]{xcolor}
+\usepackage{pgfplots}
+% \usepackage[subpreambles=true]{standalone}
+
+% Custom
+\usepackage{config/toggles}
+\usepackage{config/terminology}
+\usepackage{config/settings}
+
+% Meta
+% \usepackage[bookmarks=true,bookmarksnumbered=true,
+%      pdfpagemode={UseOutlines},plainpages=false,pdfpagelabels=true,
+%      colorlinks=true,linkcolor={black},citecolor={black},urlcolor={black},
+%      pdftitle={\paperTitle{}},%
+%      pdfsubject={\paperSubject{}},%
+%      pdfauthor={\paperAuthors{}},%
+%      pdfkeywords={\paperKeywords{}},
+%      pdftex]{hyperref}
+     
+%
+% ---------------------------------------------------------------------------- %
+
+
+
+
+
+
+% ---------------------------------------------------------------------------- %
+% Document
+
+\begin{document}
+
+\nocaptionrule
+\frenchspacing
+\raggedbottom
+
+\conferenceinfo{MoreVMs'17}{April 3, 2017, Brussels, Belgium}
+\copyrightyear{2017}
+
+% Rights
+% -- ccby is default
+% -- ccybnd is ????
+\publicationrights{ccby}
+
+% Preprint only
+\titlebanner{should we write anything here?}
+\preprintfooter{or here?}
+
+\title{\paperTitle{}}
+\subtitle{\paperSubtitle{}}
+
+\authorinfo{Richard Roberts\and James Noble}
+           {Victoria University of Wellington}
+           {richard.andrew.roberts@gmail.com\and kjx@ecs.vuw.ac.nz}
+
+\authorinfo{Stefan Marr}
+           {Victoria University of Wellington}
+           {kjx@ecs.vuw.ac.nz}
+
+\maketitle
+
+\begin{abstract}
+    \input{modules/abstract}
+\end{abstract}
+
+\category{CR-number}{subcategory}{third-level}
+
+% general terms are not compulsory anymore,
+% you may leave them out
+\terms
+term1, term2
+
+\keywords
+keyword1, keyword2
+
+
+% 
+% ---------------------------------------------------------------------------- %
+
+
+
+
+
+
+% ---------------------------------------------------------------------------- %
+% Modules
+
+\section{Introduction}
+\label{s:introduction}
+\iftoggle{introduction}{
+    \input{modules/introduction}
+}{}
+
+\section{Background}
+\label{s:background}
+\iftoggle{introduction}{
+    \input{modules/background}
+}{}
+
+    \subsection{Grace and Newspeak}
+    \iftoggle{introduction}{
+        \input{modules/background/grace-and-newspeak}
+        \input{modules/background/feature-table}
+    }{}
+
+    \subsection{SOMns}
+    \iftoggle{introduction}{
+        \input{modules/background/somns}
+    }{}
+
+\section{Progress}
+\label{s:progress}
+\iftoggle{introduction}{
+    \input{modules/progress}
+}{}
+
+\section{Conclusion}
+\label{s:conclusion}
+\iftoggle{introduction}{
+    \input{modules/conclusion}
+}{}
+
+\iftoggle{appendices}{
+    \appendix
+    \section{Appendix Title}
+}{}
+
+\iftoggle{acknowledge}{
+    \acks
+    \input{modules/acknowledgements}
+}{}
+
+
+%
+% ---------------------------------------------------------------------------- %
+
+
+
+
+
+
+% ---------------------------------------------------------------------------- %
+% Tail
+
+
+\bibliographystyle{abbrvnat}
+\bibliography{refs/main}
+
+
+
+\end{document}
+
+
+% 
+% ---------------------------------------------------------------------------- %
+

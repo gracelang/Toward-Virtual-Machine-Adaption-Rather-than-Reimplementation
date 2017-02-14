@@ -1,0 +1,5 @@
+PWD /home/riro/Desktop/Pebble/Development/Noble/Papers/Grace-in-SOMns/content/tables
+INPUT /usr/share/texmf-dist/web2c/texmf.cnf
+INPUT /var/lib/texmf/web2c/pdftex/pdflatex.fmt
+INPUT /home/riro/Desktop/Pebble/Development/Noble/Papers/Grace-in-SOMns/content/tables/feature-table.tex
+OUTPUT /home/riro/Desktop/Pebble/Development/Noble/Papers/Grace-in-SOMns/content/tables/feature-table.log

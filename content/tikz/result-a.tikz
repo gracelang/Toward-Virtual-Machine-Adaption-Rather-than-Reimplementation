@@ -1,0 +1,17 @@
+\pgfplotstableread[row sep=\\,col sep=&]{
+    Test        & Grace & Newspeak \\
+    Sum Million & 12.8  & 3.8      \\
+    Mandelbrot  & 1.2   & 0.1      \\
+    Factorial    & 15.5  & 10.4     \\
+}\mydata
+
+\begin{tikzpicture}
+    \begin{axis}[
+            ybar,
+            symbolic x coords={Mandelbrot,Sum Million,Nonexist},
+            xtick=data,
+        ]
+        \addplot table[x=Test,y=Grace]{\mydata};
+        \addplot table[x=Test,y=Newspeak]{\mydata};
+    \end{axis}
+\end{tikzpicture}

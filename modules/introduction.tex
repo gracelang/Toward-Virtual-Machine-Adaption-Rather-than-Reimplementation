@@ -1,0 +1,29 @@
+%!TEX root = ../paper.tex
+
+% ---------------------------------------------------------------------------- %
+% Outline
+
+\iftoggle{outline}{
+
+    \begin{itemize}
+        \item VMs are good
+        \item Hard to build, even with VM gramworks like Truffle \& pypy
+        \item Makes it hard for a new langauge to get a VM
+        \item We are exploring making a VM for Grace by adapting VM for NS
+        \item initial results are positive
+    \end{itemize}
+
+}{}
+
+% 
+% ---------------------------------------------------------------------------- %
+
+
+An \interp{} is collections of tools for executing a program. \lexing{} encodes an \ir{} with the logic of the program and then that representation is visited to realize execution. From its outset, practitioners have created a multitude of different \interps{} for different languages, each with a toolkit based on similar conventions but unique in its implementation (often required to support the semantics of the language being interpreted). The original idea of a \emph{\vm{}} was a tool that compiled a program from an abstract into machine executable code, useful in that \languageDevs{} could implement a method to parse their language into the \ir{} understood by the \vm{}. More recently, \emph{\vmframeworks{}} have emerged and are now blurring the roles of language interpretation tools.
+
+New frameworks such as \textsc{Truffle} or \textsc{PyPy} are \vmframeworks{} that reduce the efforts of \languageDevs{} hoping to create a \vm{} that is tailored to their own languages. The \hostvm{} provides a high level language for the \languageDev{} to create a \vm{} tailored to their language; and furthermore, the \hostvm{} offers features such as \gb{} implicitly.
+
+It appears \languageDevs{} continue to reimplement the same toolkit on top of the \hostvm{}, each creating their own copies of tools for \lexing{}, \parsing{}, a \visiting{}, and \objstorage{}. While using a \hostvm{} framework offers the advantageous of the higher level language and a number of features, reimplementing each of these components remains a significant amount of work; and furthermore, the \languageDev{} must be careful to plan their \ir{} and \ads{} appropriately to take advantage of the optimizations offered by the \hostvm{}. Despite the significant advantageous of the \vmframeworks{}, there remains no way to extend a standard set of tools in order to construct a \tvm{} for the purposes of validating experimental language designs. 
+
+We are exploring the potential adaptability of robust \vms{} built upon \vmframeworks{}; in particular, we hope to reuse \textsc{\SOMns{}} -- a \tvm{} for the \NewspeakPL{} -- to realize \tvm{} for the \GracePL{}. In order to pursue extension over reimplementation, we have conducted a preliminary analysis of these two languages and developed an initial implementation with positive results.
+
