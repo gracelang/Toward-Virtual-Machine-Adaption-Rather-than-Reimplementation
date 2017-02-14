@@ -8,7 +8,7 @@
 \begin{tikzpicture}
     \begin{axis}[
             ybar,
-            symbolic x coords={Mandelbrot,Sum Million,Nonexist},
+            symbolic x coords={Mandelbrot,Sum Million,Factorial},
             xtick=data,
         ]
         \addplot table[x=Test,y=Grace]{\mydata};
