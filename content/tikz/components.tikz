@@ -1,0 +1,46 @@
+\tikzset{
+    define color/.code 2 args={
+        \definecolor{#1}{hsb}{#2}
+    },
+    define color={col-input}{0.95, 0.71, 0.92},
+    define color={col-new}{0.6, 0.71, 0.92},
+%
+    basic/.style    = {draw, rounded corners=1pt, thin,align=center, text width=2cm, drop shadow, font=\sffamily, rectangle, minimum height=1cm},
+    obselete/.style = {basic, opacity=0.2, fill=col-input},
+    exists/.style   = {basic, opacity=0.6, fill=col-input},
+    input/.style    = {basic, opacity=1.0, fill=col-input},
+    created/.style  = {basic, opacity=1.0, fill=col-new},
+}
+
+
+\begin{tikzpicture}[
+	edge from parent/.style ={}
+]
+
+\node[obselete] (NewspeakPrelude) {Newspeak Prelude};
+\node[obselete, xshift=2cm, right of = NewspeakPrelude] (NewspeakParser) {Newspeak Parser};
+
+\node[input, xshift=2cm, right of = NewspeakParser] (SOMnsAST) {SOMns AST};
+\node[input, xshift=2cm, right of = SOMnsAST] (Truffle) {Truffle};
+\node[input, xshift=2cm, right of = Truffle, below of = Truffle] (Graal) {Graal};
+
+\node[exists, yshift=-1cm, below of = NewspeakPrelude] (GracePrelude) {Grace Prelude};
+\node[exists, xshift=2cm, right of = GracePrelude] (GraceParser) {Grace Parser};
+\node[exists, xshift=2cm, right of = GraceParser] (GraceAST) {Grace AST};
+
+\node[created, xshift=2cm, below of = GraceAST, right of = GraceAST] (Translator) {Translator};
+
+
+\draw[->>, thick] (NewspeakPrelude) -- (NewspeakParser);
+\draw[->>, thick] (NewspeakParser) -- (SOMnsAST);
+\draw[->>, thick] (SOMnsAST) -- (Truffle);
+\draw[->>, thick] (Truffle) |- (Graal);
+\draw[->>, thick] (Graal) |- (Truffle);
+
+\draw[->>, thick] (GracePrelude) -- (GraceParser);
+\draw[->>, thick] (GraceParser) -- (GraceAST);
+\draw[->>, thick] (GraceAST) -- (Translator);
+
+\draw[->>, thick] (Translator) -- (SOMnsAST);
+
+\end{tikzpicture}
