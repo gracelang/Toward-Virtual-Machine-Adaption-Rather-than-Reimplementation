@@ -4,18 +4,46 @@
 % Outline
 
 \iftoggle{outline}{
-
     \begin{itemize}
         \item Revisit intro. 
         \item Reconceptualising SOMns as a library for nested OO languages
     \end{itemize}
-
 }{}
+
+\iftoggle{oldcomments}{
+	\sm{ok, so, what are the `adaptation mechanisms', the reusable parts you envision so far?
+	I would try to give a bit more space to speculating on that, because that's
+	likely the part that's most interesting for others.
+	%
+	Things Truffle doesn't have at the moment is mechanisms to high-level AST manipulation, it doesn't have a notion of lexical scopes, and lexical knowledge.
+	Is that something you need for mapping from Grace to SOMns?
+	%
+	Other aspects missing are libraries for storage strategies for collections (they got them for RPython)
+	or things like ropes for strings (immutable tree-like representation, to minimize memory use).
+	Libraries of basic math nodes/specializations, assuming that the numeric models
+	would be similar between languages (which they are only superficially).
+	In terms of standard control structures, it has support for loops.
+	Others might be useful, because one typically adds profiling for performance.
+	This would make basic steps for language implementers easy.
+	%
+	Perhaps you have other ideas/aspects you see currently as important.
+	}
+	\sm{at the moment, I am not sure we fit actually more related work in here.
+	Let's not go overboard with the text length.}
+}
 
 % 
 % ---------------------------------------------------------------------------- %
 
 
-We have presented an experiment in which we realized a ostensible \GraceVM{} from \SOMns{}, while retaining much of the \optimizations{} that were tailored to \Newspeak{}. While further experiments are required before we can quantify the extent to which the similarity of the languages, the craft of \SOMns{}, and the flexibility of \Truffle{} contribute to the ability to make such an adaption. 
 
-While the recent \vmframeworks{} provide significant advantages in terms of being able to develop fully-fledged implementations of a new language, we believe that through the success of further experiments we reconceptualize a small set of reusable tools that \languageDevs{} can extend to build small but valid \tvms{} for their own \noopls{}\sm{nested?? what does that refer to?}.
+% ---------------------------------------------------------------------------- %
+%
+
+With the intially positive results, we aim to investigate which mechanisms of SOMns are most useful for adaption. Before we can realize a correct, we must address the differences in lexical scoping between Grace (classes can be nested anywhere) and Newspeak (classes can only be nested inside of other classes). As Truffle does not support higher-level \AST/ manipulation and lexical scoping, we are left with the choice of reimplementing new \AST/ nodes using Truffle (a significant amount of work) or otherwise changing of the SOMns \AST/ nodes (which may eventual conflict with Newspeak semantics). While the recent \VM/ frameworks provide significant advantages in terms of being able to develop fully-fledged implementations of a new language, we believe that if a set of simple-but-extendable mechanisms for higher-level \AST/; lexical scoping; storage strategies; and basic libraries with numeric models then the potential for adaption over reimplementation would be much higher.
+
+Through continuing to adapt \SOMns for Grace we pursue the development of such mechanisms. If successful, we can begin to reconceptualize the process of language implementation, where developers reuse small but valid \VMs/ with only minor adaptions to implement semantically correct and fast interpreters for their languages.
+
+%
+% ---------------------------------------------------------------------------- %
+
