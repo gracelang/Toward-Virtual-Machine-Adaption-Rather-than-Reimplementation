@@ -4,7 +4,7 @@
 % Pre
 
 % Document
-\documentclass[10pt, preprint]{sigplanconf}
+\documentclass[10pt]{sigplanconf}
 
 % Standard
 \usepackage{hyperref}
@@ -21,6 +21,7 @@
 \usepackage{config/toggles}
 \usepackage{config/terminology}
 \usepackage{config/settings}
+\usepackage{config/citing}
 
 % Meta
 % \usepackage[bookmarks=true,bookmarksnumbered=true,
@@ -58,19 +59,24 @@
 \publicationrights{ccby}
 
 % Preprint only
-\titlebanner{should we write anything here?}
-\preprintfooter{or here?}
+% \titlebanner{should we write anything here?}
+% \preprintfooter{or here?}
 
 \title{\paperTitle{}}
 \subtitle{\paperSubtitle{}}
 
-\authorinfo{Richard Roberts\and James Noble}
+\authorinfo{Richard Roberts}
            {Victoria University of Wellington}
-           {richard.andrew.roberts@gmail.com\and kjx@ecs.vuw.ac.nz}
+           {richard.andrew.roberts@gmail.com}
 
 \authorinfo{Stefan Marr}
+           {Johannes Kepler University Linz}
+           {stefan.marr@jku.at}
+
+\authorinfo{James Noble}
            {Victoria University of Wellington}
            {kjx@ecs.vuw.ac.nz}
+
 
 \maketitle
 
@@ -78,16 +84,10 @@
     \input{modules/abstract}
 \end{abstract}
 
-\category{CR-number}{subcategory}{third-level}
-
-% general terms are not compulsory anymore,
-% you may leave them out
-\terms
-term1, term2
+% \category{CR-number}{subcategory}{third-level}
 
 \keywords
-keyword1, keyword2
-
+\paperKeywords{}
 
 % 
 % ---------------------------------------------------------------------------- %
@@ -108,30 +108,19 @@ keyword1, keyword2
 
 \section{Background}
 \label{s:background}
-\iftoggle{introduction}{
+\iftoggle{background}{
     \input{modules/background}
-}{}
-
-    \subsection{Grace and Newspeak}
-    \iftoggle{introduction}{
-        \input{modules/background/grace-and-newspeak}
-        \input{modules/background/feature-table}
-    }{}
-
-    \subsection{SOMns}
-    \iftoggle{introduction}{
-        \input{modules/background/somns}
-    }{}
+}{} 
 
 \section{Progress}
 \label{s:progress}
-\iftoggle{introduction}{
+\iftoggle{progress}{
     \input{modules/progress}
 }{}
 
 \section{Conclusion}
 \label{s:conclusion}
-\iftoggle{introduction}{
+\iftoggle{conclusion}{
     \input{modules/conclusion}
 }{}
 
@@ -159,10 +148,8 @@ keyword1, keyword2
 
 
 \bibliographystyle{abbrvnat}
-\bibliography{refs/main}
-
-
-
+\bibliography{refs/books,refs/grace,refs/newspeak,refs/reuse,refs/stefan,refs/truffle}
+              
 \end{document}
 
 

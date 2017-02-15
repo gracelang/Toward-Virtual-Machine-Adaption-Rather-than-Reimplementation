@@ -8,64 +8,34 @@
     \begin{itemize}
         \item Introduce Grace
         \item Introduce Newspeak
-        \item Introduce SOMns
+        \item Describes the relationship between Grace and Newspeak
+        \item Makes some notes on SOMns
     \end{itemize}
 
 }{}
 
+\input{modules/background/review-of-newspeak}
 
-(kjx: you know, perhpas we don't need to say much here)
+\input{modules/background/review-of-grace}
 
-Newspeak is an object-oriented langauge designed to combine the
-benefits of Smalltalk but supporting deeply nested class definitons to
-support libraries and family polymorphism as in BETA and gBETA
-\cite{newspeak-modules,betabook,fampoly}.  Like Smalltalk, Newspeak is
-a pure object-oriented langauge, in that all computation proceeds via
-messages sent to objects. Newspeak also adopts Smalltalk's multi-part
-message syntax and use of lambda-expressions (``blocks'') to encode
-control structures.
+\Newspeak{} was a significant influence on \Grace{}'s design. \Grace{} shares with \Newspeak{} that static types generally do not affect a program's execution; that control structures are handled with lambda expressions; and (to an extent) that class definitions can be nested. The most significant underlying difference in \Grace{} is that classes are defined in terms of objects and their definitions can be nested freely (inside other objects, classes, methods, or lambda expressions), whereas in \Newspeak{} objects are defined in terms of classes and classes can only be declared nested inside other classes.
 
-Grace is a new object-oriented language ostensibly designed to support
-education \cite{graceOnward12}.  Grace's syntax is designed to look
-like Java (or the ``curly bracket'' langauges more generally) but
-draws widely on the traditions of object-oriented programming.  Grace
-is designed to mix static and dynamic types (like Strongtalk or
-C$\sharp$); makes heavy use of lambda expresions (like Smalltalk or
-Ruby); supports nested class definitions (like BETA); and uses method
-aliasing for inheritance (somewhat like Eiffel). 
-
-Newspeak was a significant influence on Grace's design. Grace shares
-with Newspeak that static types generally do not affect a program's
-execution; that control strucures are handled with lambda expressions;
-and (to an extent) that class definitions can be nested.  Probably the
-most signficant underlying difference is that in Grace, classes are
-defined in terms of objects, and their definitons can be nested freely
-(inside other objects, classes, methods, or lambda expressions)
-whereas in Newspeak, obejcts are defined in terms of classes, and
-classes can only be declared nested inside other classes.
-There are number of Newspeak implementations, here we are interested
-on SOMns, a high-performnce implementation based on the Truffle
-framework and Graal compiler \cite{stefanEventLoop,Truffle,Graal}.
-
-(Stefan to write something on SOMns :-)
-
+\input{modules/background/notes-on-somns}
 
 
 % 
 % ---------------------------------------------------------------------------- %
 
 
-\subsection{Related Work}
 
+% ---------------------------------------------------------------------------- %
+%  Notes
 
-\paragraph{\vmframeworks{}} 
+% Additionally, the rise of dynamic languages has led to a plethora of new VMs, since a completely new VM is typically developed for every new language. VMs are still mostly monolithic pieces of software. They are developed in C or C++, the languages that they aim to replace. In summary, VMs offer a lot of benefits for applications running on top of them, but they mostly do not utilize these benefits for themselves.
+% -- \rcite{Wimmer2012}{203}
 
-\begin{itemize}
-\item  \cite{Wurthinger2012} Self optimizing AST
-\end{itemize}
+% The goal of our research is to investigate the impact of fine-grained modularity on VMs. We envision a VM following the “everything is extensible” paradigm, by combining best practices of existing VM design and existing module systems.
+% -- \rcite{Wimmer2012}{204}
 
-\paragraph{Reusable Tools} 
-
-\begin{itemize}
-\item \cite{WoB2014} Reusable Object storage model
-\end{itemize}
+% 
+% ---------------------------------------------------------------------------- %
