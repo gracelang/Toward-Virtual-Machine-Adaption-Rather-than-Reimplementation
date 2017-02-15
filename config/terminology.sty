@@ -1,25 +1,36 @@
 % ---------------------------------------------------------------------------- %
 % Terminology
 
+% To add
+
+% module system (\cite{Wimmier2012}{203})
+% jitter
+% run-time serivces (such as thread synchronization)
+% meta-circular VMS
+% fine-grained VM
+
 % Pronouns
-\newcommand{\languageDev}{language developer}
+\newcommand{\languageDev}{developer}
+\newcommand{\LanguageDev}{Developer}
 \newcommand{\languageDevs}{\languageDev{}s}
+\newcommand{\LanguageDevs}{\LanguageDev{}s}
 
 % Interpretation
-\newcommand{\interp}{interpretor}
+\newcommand{\interp}{interpreter}
 \newcommand{\interps}{\interp{}s}
 \newcommand{\lexing}{lexical analysis}
 \newcommand{\ir}{intermediatry representation}
 \newcommand{\irs}{\ir{}s}
 \newcommand{\ads}{abstract data structure}
-\newcommand{\parsing}{parsing}
-\newcommand{\translating}{translating}
-\newcommand{\visiting}{visting}
-\newcommand{\objstorage}{object storage}
+\newcommand{\parser}{parser}
+\newcommand{\astw}{ast walker}
+\newcommand{\jitting}{just-it-time compiler}
+\newcommand{\objectstorage}{object storage}
 \newcommand{\gb}{garbage collection}
+\newcommand{\optimizations}{optimizations}
 
 % Virtual Machines
-\newcommand{\vm}{virtual machine}
+\newcommand{\vm}{VM}
 \newcommand{\vms}{\vm{}s}
 \newcommand{\hostvm}{host \vm{}}
 \newcommand{\tvm}{tailored \vm{}}
@@ -29,23 +40,43 @@
 \newcommand{\vmframework}{\vm{} \framework{}}
 \newcommand{\vmframeworks}{\vmframework{}s}
 
-% Programming Languages
+% Programming language terms
 \newcommand{\pl}{programming language}
 \newcommand{\pls}{\pl{}s}
 \newcommand{\oopl}{object-oriented \pl{}}
 \newcommand{\oopls}{\oopl{}s}
 \newcommand{\noopl}{nested \oopl{}}
 \newcommand{\noopls}{\noopl{}s}
+\newcommand{\hll}{higher level language}
 
-\newcommand{\Grace}{\textsc{Grace}}
-\newcommand{\Newspeak}{\textsc{Newspeak}}
+% Programming languages
+\newcommand{\Grace}{Grace}
+\newcommand{\Newspeak}{Newspeak}
+\newcommand{\Python}{Python}
+\newcommand{\Ruby}{Ruby}
+\newcommand{\Java}{Java}
+\newcommand{\Javascript}{Javascript}
 
 \newcommand{\GracePL}{\Grace{} \pl{}}
 \newcommand{\NewspeakPL}{\Newspeak{} \pl{}}
 
 % Implementations
-\newcommand{\SOMns}{\textsc{SOMns}}
-\newcommand{\GraceVM}{a \vm{} for Grace}
+\newcommand{\Truffle}{Truffle}
+\newcommand{\PyPy}{PyPy}
+\newcommand{\SOMns}{SOMns}
+\newcommand{\GraceVM}{Grace \vm{}}
+
+% Other keywords
+\newcommand{\vma}{\vm{} adaption}
+
+% Shortcuts
+\newcommand{\listVmComponents}{a \parser{}, an \astw{}, and \objectstorage{}}
+\newcommand{\listRecentVmFrameworks}{\Truffle{} and \PyPy{}}
+
+% Ideas used or introduced in other papers
+\newcommand{\denotationalSemantics}{denotational semantics} % \cite{Inostroza2015}
+\newcommand{\ObjectAlgebras}{Object Algebras} %\cite{Oliveira2012}
+
 
 %
 % ---------------------------------------------------------------------------- %

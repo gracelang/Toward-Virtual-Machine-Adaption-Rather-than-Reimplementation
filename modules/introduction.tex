@@ -19,11 +19,37 @@
 % ---------------------------------------------------------------------------- %
 
 
-An \interp{} is collections of tools for executing a program. \lexing{} encodes an \ir{} with the logic of the program and then that representation is visited to realize execution. From its outset, practitioners have created a multitude of different \interps{} for different languages, each with a toolkit based on similar conventions but unique in its implementation (often required to support the semantics of the language being interpreted). The original idea of a \emph{\vm{}} was a tool that compiled a program from an abstract into machine executable code, useful in that \languageDevs{} could implement a method to parse their language into the \ir{} understood by the \vm{}. More recently, \emph{\vmframeworks{}} have emerged and are now blurring the roles of language interpretation tools.
+\listRecentVmFrameworks{}, recent \vmframeworks{}, provide a \hostvm{} that implements a \hll{}. \LanguageDevs{} can use to \hostvm{} to create a new \vm{} that is tailored to their own \pls{}. Beyond offering a \hll{} for implementation, the \hostvm{} can also offer features such as \gb{}, \jitting{}, and other \optimizations{} implicitly. Unsuprisingly, \LanguageDevs{} have already used the \frameworks{} to succesfully implementation popular \oopl{}, such as \Python{}; \Ruby{}; \Javascript{}; and more, with computaation results comporable to that of the monolithic bytecode \interps{}. 
 
-New frameworks such as \textsc{Truffle} or \textsc{PyPy} are \vmframeworks{} that reduce the efforts of \languageDevs{} hoping to create a \vm{} that is tailored to their own languages. The \hostvm{} provides a high level language for the \languageDev{} to create a \vm{} tailored to their language; and furthermore, the \hostvm{} offers features such as \gb{} implicitly.
+% Object storage is provided by truffle, so, the fact that SOMns has its own is somewhat an artifact of ‘history’, and perhaps somewhat an optimization/step to avoid dependence on closed-source Oracle features. There are other aspects like storage strategies (think of our arrays), which haven’t been included in truffle yet, but are for instance in RPython: 
+% -- http://dl.acm.org/citation.cfm?id=2816716
 
-It appears \languageDevs{} continue to reimplement the same toolkit on top of the \hostvm{}, each creating their own copies of tools for \lexing{}, \parsing{}, a \visiting{}, and \objstorage{}. While using a \hostvm{} framework offers the advantageous of the higher level language and a number of features, reimplementing each of these components remains a significant amount of work; and furthermore, the \languageDev{} must be careful to plan their \ir{} and \ads{} appropriately to take advantage of the optimizations offered by the \hostvm{}. Despite the significant advantageous of the \vmframeworks{}, there remains no way to extend a standard set of tools in order to construct a \tvm{} for the purposes of validating experimental language designs. 
+Despite the multitidue of \tvms{} that have been developed using \vmframeworks{}, it appears that \languageDevs{} tend to recreate similar components (\listVmComponents{}) \emph{on-top-of} the \framework{} rather than reuse the existing implementationms from other \tvms{}; perhaps gaining fine-grained control over later optimizations at the cost of a significant amount of work.
 
-We are exploring the potential adaptability of robust \vms{} built upon \vmframeworks{}; in particular, we hope to reuse \textsc{\SOMns{}} -- a \tvm{} for the \NewspeakPL{} -- to realize \tvm{} for the \GracePL{}. In order to pursue extension over reimplementation, we have conducted a preliminary analysis of these two languages and developed an initial implementation with positive results.
+% People are playing with these ideas
+% -- Product Lines of Interpreters Using Truffle with Object Algebras
+% -- Modular interpreters for the masses: implicit context propagation using object algebras
 
+Recently, the notion of developing a set of component that can be easily extended to create a \tvm{} have gained traction. For example, \rcitea{WoB2014} introduced a robust \objectstorage{} model, which has now been intergrated into the \Truffle{} \framework{}; and \rcite{Inostroza2015} introduce reusable components for languages with \denotationalSemantics{} using \emph{\ObjectAlgebras{}} \rcite{Oliveira2012}.
+
+We propose to explore the potential for robustly implemented \tvms{} to serve as themselves as an extensible \frameworks{} for reuse, through an experiment where we adapt \textsc{\SOMns{}} to realize a \GraceVM{}.
+
+
+%
+% ---------------------------------------------------------------------------- %
+
+
+
+% ---------------------------------------------------------------------------- %
+% Notes
+
+% The original idea of a \emph{\vm{}} was a tool that compiled a program from an abstract into machine executable code, useful in that \languageDevs{} could implement a method to parse their language into the \ir{} understood by the \vm{}. 
+
+    % Stefan - I don’t think so, p-code might be the first example of a virtual machine. There was no translation, it was just to avoid targeting a specific hardware machine, because back then they had many more different architectures than 3-4 people care about today
+
+
+
+% An \interp{} is collections of tools for executing a program. \lexing{} encodes an \ir{} with the logic of the program and then that representation is visited to realize execution. From its outset, practitioners have created a multitude of different \interps{} for different languages, each with a toolkit based on similar conventions but unique in its implementation (often required to support the semantics of the language being interpreted). 
+
+% 
+% ---------------------------------------------------------------------------- %
