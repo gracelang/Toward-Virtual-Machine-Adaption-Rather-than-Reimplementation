@@ -78,3 +78,49 @@ This paper presents 14 benchmarks and a novel methodology to assess the compiler
   year = 2016
 }
 
+@presentation{stefanEventLoop,
+  abstract = {Communicating Event-Loop Languages similar to E and AmbientTalk are recently gaining more traction as a subset of actor languages. With the rise of JavaScript, E’s notion of vats and non-blocking communication based on promises entered the mainstream. For implementations, the combination of dynamic typing, asynchronous message sending, and promise resolution pose new optimization challenges.
+
+This paper discusses these challenges and presents initial experiments for a Newspeak implementation based on the Truffle framework. Our implementation is on average 1.65x slower than Java on a set of 14 benchmarks. Initial optimizations improve the performance of asynchronous messages and reduce the cost of encapsulation on microbenchmarks by about 2x. Parallel actor benchmarks further show that the system scales based on the workload characteristics. Thus, we conclude that Truffle is a promising platform also for communicating event-loop languages.},
+  added-at = {2015-09-25T10:47:48.000+0200},
+  author = {Marr, Stefan and Mössenböck, Hanspeter},
+  biburl = {http://www.bibsonomy.org/bibtex/29f9881cc5d059f4916d4805e780b5e00/gron},
+  booktitle = {Presentation at 5th International Workshop on Programming based on Actors, Agents, and Decentralized Control},
+  day = 26,
+  interhash = {0a0937a8e45344c88cbe6fb1ad8c42fa},
+  intrahash = {9f9881cc5d059f4916d4805e780b5e00},
+  keywords = {Actors Caching CommunicatingEventLoops Compiler Concurrency MeMyPublication Message Optimization PIC Sending Truffle myown},
+  location = {Pittsburgh, PA, USA},
+  month = {October},
+  pdf = {http://stefan-marr.de/downloads/agere15-agere-marr-moessenboeck-optimizing-communicating-event-loop-languages-with-truffle.pdf},
+  series = {AGERE '15},
+  timestamp = {2015-09-25T11:39:02.000+0200},
+  title = {Optimizing Communicating Event-Loop Languages with Truffle},
+  type = {Work-in-Progress-Paper},
+  url = {http://stefan-marr.de/papers/agere-marr-moessenboeck-optimizing-communicating-event-loop-languages-with-truffle/},
+  year = 2015
+}
+
+@inproceedings{Wurthinger:2013:OVR,
+  abstract = {Building high-performance virtual machines is a complex and expensive undertaking; many popular languages still have low-performance implementations. We describe a new approach to virtual machine (VM) construction that amortizes much of the effort in initial construction by allowing new languages to be implemented with modest additional effort. The approach relies on abstract syntax tree (AST) interpretation where a node can rewrite itself to a more specialized or more general node, together with an optimizing compiler that exploits the structure of the interpreter. The compiler uses speculative assumptions and deoptimization in order to produce efficient machine code. Our initial experience suggests that high performance is attainable while preserving a modular and layered architecture, and that new high-performance language implementations can be obtained by writing little more than a stylized interpreter.},
+  acmid = {2509581},
+  added-at = {2014-01-21T10:06:31.000+0100},
+  author = {W\"{u}rthinger, Thomas and Wimmer, Christian and W\"{o}\ss, Andreas and Stadler, Lukas and Duboscq, Gilles and Humer, Christian and Richards, Gregor and Simon, Doug and Wolczko, Mario},
+  biburl = {http://www.bibsonomy.org/bibtex/2b29e79b951e3cf138c348e4499ba5695/gron},
+  booktitle = {Proceedings of the 2013 ACM International Symposium on New Ideas, New Paradigms, and Reflections on Programming \& Software},
+  description = {One VM to rule them all},
+  doi = {10.1145/2509578.2509581},
+  interhash = {9b0794c882d392a58ec3fd6c4dc3aaf5},
+  intrahash = {b29e79b951e3cf138c348e4499ba5695},
+  isbn = {978-1-4503-2472-4},
+  keywords = {Graal Implementation Language Truffle VM VirtualMachine},
+  location = {Indianapolis, Indiana, USA},
+  numpages = {18},
+  pages = {187--204},
+  publisher = {ACM},
+  series = {Onward!'13},
+  timestamp = {2015-09-07T10:49:07.000+0200},
+  title = {{One VM to Rule Them All}},
+  year = 2013
+}
+
