@@ -12,43 +12,38 @@
 % Pronouns
 \newcommand{\languageDev}{developer}
 \newcommand{\LanguageDev}{Developer}
-\newcommand{\languageDevs}{\languageDev{}s}
-\newcommand{\LanguageDevs}{\LanguageDev{}s}
+\newcommand{\languageDevs}{\languageDevs}
+\newcommand{\LanguageDevs}{\LanguageDevs}
 
 % Interpretation
 \newcommand{\interp}{interpreter}
-\newcommand{\interps}{\interp{}s}
+\newcommand{\interps}{\interps}
 \newcommand{\lexing}{lexical analysis}
 \newcommand{\ir}{intermediatry representation}
-\newcommand{\irs}{\ir{}s}
+\newcommand{\irs}{\irs}
 \newcommand{\ads}{abstract data structure}
-\newcommand{\parser}{parser}
+
 \newcommand{\AST}{abstract-syntax tree}
-\newcommand{\astw}{\AST{} walker}
+
 \newcommand{\jitting}{just-it-time compiler}
 \newcommand{\objectstorage}{object storage}
 \newcommand{\gb}{garbage collection}
 \newcommand{\optimizations}{optimizations}
 
 % Virtual Machines
-\newcommand{\vm}{VM}
-\newcommand{\vms}{\vm{}s}
-\newcommand{\hostvm}{host \vm{}}
-\newcommand{\tvm}{tailored \vm{}}
-\newcommand{\tvms}{\tvm{}s}
-\newcommand{\framework}{framework}
-\newcommand{\frameworks}{\framework{}s}
-\newcommand{\vmframework}{\vm{} \framework{}}
-\newcommand{\vmframeworks}{\vmframework{}s}
+\def\VM/{Virtual Machine}
+% \newcommand{\VM/}{Virtual Machine}
+\newcommand{\VMs}{Virtual Machines}
+\newcommand{\JITing}{\textsc{JIT}ing}
 
 % Programming language terms
 \newcommand{\pl}{language}
-\newcommand{\pls}{\pl{}s}
+\newcommand{\pls}{\pls}
 \newcommand{\oop}{object-oriented programming}
-\newcommand{\oopl}{\oop{} \pl{}}
-\newcommand{\oopls}{\oopl{}s}
-\newcommand{\noopl}{nested \oopl{}}
-\newcommand{\noopls}{\noopl{}s}
+\newcommand{\oopl}{\oop \pl}
+\newcommand{\oopls}{\oopls}
+\newcommand{\noopl}{nested \oopl}
+\newcommand{\noopls}{\noopls}
 \newcommand{\hll}{higher level language}
 
 % Programming languages
@@ -57,7 +52,7 @@
 \newcommand{\Python}{Python}
 \newcommand{\Ruby}{Ruby}
 \newcommand{\Java}{Java}
-\newcommand{\Javascript}{JavaScript}
+\newcommand{\JavaScript}{JavaScript}
 \newcommand{\Smalltalk}{Smalltalk}
 \newcommand{\Strongtalk}{Strongtalk}
 \newcommand{\BETA}{BETA}
@@ -66,24 +61,22 @@
 
 
 
-\newcommand{\GracePL}{\Grace{} \pl{}}
-\newcommand{\NewspeakPL}{\Newspeak{} \pl{}}
+\newcommand{\GracePL}{\Grace \pl}
+\newcommand{\NewspeakPL}{\Newspeak \pl}
 
 % Implementations
 \newcommand{\Truffle}{Truffle}
 \newcommand{\Graal}{Graal}
 \newcommand{\RPython}{RPython}
 \newcommand{\SOMns}{SOMns}
-\newcommand{\GraceVM}{Grace \vm{}}
+\newcommand{\GraceVM}{Grace \VM/}
 
 % Other keywords
-\newcommand{\vma}{\vm{} adaption}
 \newcommand{\prelude}{prelude}
 \newcommand{\translator}{translator}
 
 % Shortcuts
-\newcommand{\listVmComponents}{a \parser{}, an \astw{}, and \objectstorage{}}
-\newcommand{\listRecentVmFrameworks}{\Truffle{} and \RPython{}}
+\newcommand{\listVmComponents}{}
 
 % Ideas used or introduced in other papers
 \newcommand{\denotationalSemantics}{denotational semantics} % \cite{Inostroza2015}
