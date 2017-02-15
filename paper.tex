@@ -6,35 +6,24 @@
 % Document
 \documentclass[10pt]{sigplanconf}
 
-\usepackage[utf8]{inputenc}
-
 % Standard
+\usepackage[utf8]{inputenc}
 \usepackage{hyperref}
 \usepackage[pass,letterpaper]{geometry}
-
-% Libraries for drawing
-\usepackage{graphicx}
-\usepackage{mathptmx}
-\usepackage[rgb]{xcolor}
-\usepackage{pgfplots}
-\pgfplotsset{width=7cm,compat=1.8}
-\usetikzlibrary{arrows, shapes, positioning, shadows, trees}
-\usepackage{pgfplotstable}
-\renewcommand*{\familydefault}{\sfdefault}
-% \usepackage[subpreambles=true]{standalone}
+\usepackage{xspace}
 
 % Custom
 \usepackage{config/toggles}
 \usepackage{config/terminology}
 \usepackage{config/settings}
 \usepackage{config/citing}
-
+\usepackage{config/figures}
 \usepackage{config/collab}
 
 \collabAuthor{sm}{red}{Stefan}
 \collabAuthor{rr}{blue}{Richard}
 \collabAuthor{jn}{orange}{James}
-
+\collabAuthor{mh}{pink}{Michael}
 
 % Meta
 % \usepackage[bookmarks=true,bookmarksnumbered=true,
@@ -121,7 +110,6 @@
 
 \section{Background}
 \label{s:background}
-\sm{I'd probably cut here}
 \iftoggle{background}{
     \input{modules/background}
 }{} 
@@ -133,25 +121,6 @@
 }{}
 
 \section{Conclusion}
-\sm{ok, so, what are the `adaptation mechanisms', the reusable parts you envision so far?
-I would try to give a bit more space to speculating on that, because that's
-likely the part that's most interesting for others.
-%
-Things Truffle doesn't have at the moment is mechanisms to high-level AST manipulation, it doesn't have a notion of lexical scopes, and lexical knowledge.
-Is that something you need for mapping from Grace to SOMns?
-%
-Other aspects missing are libraries for storage strategies for collections (they got them for RPython)
-or things like ropes for strings (immutable tree-like representation, to minimize memory use).
-Libraries of basic math nodes/specializations, assuming that the numeric models
-would be similar between languages (which they are only superficially).
-In terms of standard control structures, it has support for loops.
-Others might be useful, because one typically adds profiling for performance.
-This would make basic steps for language implementers easy.
-%
-Perhaps you have other ideas/aspects you see currently as important.
-}
-\sm{at the moment, I am not sure we fit actually more related work in here.
-Let's not go overboard with the text length.}
 \label{s:conclusion}
 \iftoggle{conclusion}{
     \input{modules/conclusion}
