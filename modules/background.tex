@@ -13,11 +13,50 @@
 
 }{}
 
+
+(kjx: you know, perhpas we don't need to say much here)
+
+Newspeak is an object-oriented langauge designed to combine the
+benefits of Smalltalk but supporting deeply nested class definitons to
+support libraries and family polymorphism as in BETA and gBETA
+\cite{newspeak-modules,betabook,fampoly}.  Like Smalltalk, Newspeak is
+a pure object-oriented langauge, in that all computation proceeds via
+messages sent to objects. Newspeak also adopts Smalltalk's multi-part
+message syntax and use of lambda-expressions (``blocks'') to encode
+control structures.
+
+Grace is a new object-oriented language ostensibly designed to support
+education \cite{graceOnward12}.  Grace's syntax is designed to look
+like Java (or the ``curly bracket'' langauges more generally) but
+draws widely on the traditions of object-oriented programming.  Grace
+is designed to mix static and dynamic types (like Strongtalk or
+C$\sharp$); makes heavy use of lambda expresions (like Smalltalk or
+Ruby); supports nested class definitions (like BETA); and uses method
+aliasing for inheritance (somewhat like Eiffel). 
+
+Newspeak was a significant influence on Grace's design. Grace shares
+with Newspeak that static types generally do not affect a program's
+execution; that control strucures are handled with lambda expressions;
+and (to an extent) that class definitions can be nested.  Probably the
+most signficant underlying difference is that in Grace, classes are
+defined in terms of objects, and their definitons can be nested freely
+(inside other objects, classes, methods, or lambda expressions)
+whereas in Newspeak, obejcts are defined in terms of classes, and
+classes can only be declared nested inside other classes.
+There are number of Newspeak implementations, here we are interested
+on SOMns, a high-performnce implementation based on the Truffle
+framework and Graal compiler \cite{stefanEventLoop,Truffle,Graal}.
+
+(Stefan to write something on SOMns :-)
+
+
+
 % 
 % ---------------------------------------------------------------------------- %
 
 
 \subsection{Related Work}
+
 
 \paragraph{\vmframeworks{}} 
 
