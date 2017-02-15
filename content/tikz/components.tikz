@@ -5,7 +5,7 @@
     define color={col-input}{0.95, 0.71, 0.92},
     define color={col-new}{0.6, 0.71, 0.92},
 %
-    basic/.style    = {draw, rounded corners=1pt, thin,align=center, text width=2cm, drop shadow, font=\sffamily, rectangle, minimum height=1cm},
+    basic/.style    = {draw, rounded corners=1pt, thin,align=center, text width=2cm, font=\sffamily, rectangle, minimum height=1cm},
     obselete/.style = {basic, opacity=0.2, fill=col-input},
     exists/.style   = {basic, opacity=0.6, fill=col-input},
     input/.style    = {basic, opacity=1.0, fill=col-input},
