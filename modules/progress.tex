@@ -6,8 +6,9 @@
 \iftoggle{outline}{
 
     \begin{itemize}
-        \item explain progress so far
-        \item potentially even 1 or 2 benchmarks
+        \item Progress so far
+        \item Diagram of components
+        \item Benchmarks and description
     \end{itemize}
 
 }{}
@@ -15,14 +16,30 @@
 % 
 % ---------------------------------------------------------------------------- %
 
+As a sufficient \parser{} already has been implemented for \Grace{}, we need  only to translate \Grace{}'s \AST{} nodes (into those used implemented by \SOMns{}) to \vm{} for \GraceVM{}, see \autoref{fig:components}. We modified the console entry point for the \SOMns{}, adding a call to our \translator{}. When called, the \translator{} first parses the \Grace{}'s \prelude{} and then continues to input program. Once an \AST{} has been formed, the \translator{} converts composes a new program with equivilant semantics using only the nodes interpretable by \SOMns{}. 
 
 \begin{figure}
     \centering
     \makebox[\columnwidth][c]{
         \resizebox{\columnwidth}{!}{
-            \input{content/tikz/result-a.tikz}
+            \input{content/tikz/components.tikz}
         }
     }
-    \caption{Result a}
-    \label{fig:result-a}
+    \caption{The components of \SOMns{} and those used to adapt the implementation to a \GraceVM{}. We used an existing \prelude{} and \parser{} for \Grace{}.}
+    \label{fig:components}
 \end{figure}
+
+As an initial proof of concept, we implemented an expression nodes; numerals and string nodes; nodes to maintain lexical scoping for block and methods. In implementation, the translator is little more than a wrapper that reads the nodes in one form and exports them in other; and in a few cases composes together multinodes to preserve \Grace{}'s semantics. 
+
+\begin{figure}
+    \centering
+    \makebox[\columnwidth][c]{
+        \resizebox{\columnwidth}{!}{
+            \input{content/tikz/benchmarks.tikz}
+        }
+    }
+    \caption{The execution time reported by \SOMns{} when executing three integer-based benchmarks: calculating the factorial of 100, calculating the sum the natural numbers from zero up to one million, and calculating $500$ interations of the mandelbrot fractal. The implementations of these benchmarks in \Grace{} and \Newspeak{} have only negliable differences. The table depicts the average execution time over $1000$ iterations, with and without the \Graal{} optimization layer.}
+    \label{fig:benchmark}
+\end{figure}
+
+Despite being tailored to \Newspeak{}, \SOMns{} can be easily adapted to \Grace{} through our \translator{}. As depicted in \autoref{fig:benchmark}, there is only a marginal loss of performance due to the additional translation step. 

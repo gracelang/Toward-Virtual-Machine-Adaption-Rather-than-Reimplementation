@@ -1,14 +1,28 @@
+<br>
+
 Todo
 ====
 
+<br>
 
-1. Setup meta-data for the paper
-  - Set publication rights, keywords, terms, and number in `paper.tex`
-  - Set paper's keywords and subject in `config/settings.sty`
-  - Set preprint banner and footer in `paper.tex`
-  - Work out how to add the metadata in `paper.tex`
-  - Are there any acknowledgements?
+### James
+
+What were you suggesting by `\cite{stefanEventLoop,Truffle,Graal}`? 
+  
+- Do you mean that I should just one or two papers on Truffle and Graal,
+- and then ask Stefan what stefanEventLoop is?
+
+<br>
+
+### Stefan
+
+- Would you mind adding a sentence or two on *SOMns* at the end of the background section?
+- Refer to `modules/background/notes-on-somns.tex`
+
+<br>
+
+### Other
+
+- Are there any acknowledgements?
 
 
-2. Introduction
-  - x
