@@ -18,13 +18,21 @@
 % 
 % ---------------------------------------------------------------------------- %
 
+\sm{The use of macros seems highly over-engineered...}
+\sm{and, you might like the xspace package, I think, to avoid always having to put braces at the end}
 
-\listRecentVmFrameworks{}, recent \vmframeworks{}, provide a \hostvm{} that implements a \hll{}. \LanguageDevs{} can use to \hostvm{} to create a new \vm{} that is tailored to their own \pls{}. Beyond offering a \hll{} for implementation, the \hostvm{} can also offer features such as \gb{}, \jitting{}, and other \optimizations{} implicitly. Unsuprisingly, \LanguageDevs{} have already used the \frameworks{} to succesfully implementation popular \oopl{}, such as \Python{}; \Ruby{}; \Javascript{}; and more, with computaation results comporable to that of the monolithic bytecode \interps{}. 
+\listRecentVmFrameworks{}, two recent \ugh{\vmframeworks{}, provide a \hostvm{}}\sm{I feel this characterization is not quite accurate.
+At least for RPython, each interpreter gets its own VM generated.
+With Truffle, we indeed reuse the JVM as a host VM.} that implements a \hll{}. %\LanguageDevs{} can use to \hostvm{} to create a new \vm{} that is tailored to their own \pls{}.
+\sm{ambiguous wording:}
+\del{Beyond offering a \hll{} for implementation,}
+The \hostvm{} can also offer features such as \gb{}, \jitting{}, and other \optimizations{}. Unsurprisingly, \sm{no capital: perhaps better also no macro?}\LanguageDevs{} have already used the \frameworks{} to successfully implement popular \oopl{}, such as \Python{}, \Ruby{}, \Javascript{}, and more, with performance results comparable to that of the \ugh{monolithic bytecode \interps{}}\sm{no, much better, as good as state of the art JITing vms}\citep{Marr2015,Marr:2016:AWFY}.
 
 % Object storage is provided by truffle, so, the fact that SOMns has its own is somewhat an artifact of ‘history’, and perhaps somewhat an optimization/step to avoid dependence on closed-source Oracle features. There are other aspects like storage strategies (think of our arrays), which haven’t been included in truffle yet, but are for instance in RPython: 
 % -- http://dl.acm.org/citation.cfm?id=2816716
 
-Despite the multitidue of \tvms{} that have been developed using \vmframeworks{}, it appears that \languageDevs{} tend to recreate similar components (\listVmComponents{}) \emph{on-top-of} the \framework{} rather than reuse the existing implementationms from other \tvms{}; perhaps gaining fine-grained control over later optimizations at the cost of a significant amount of work.
+Despite the multitude of \tvms{} that have been developed using \vmframeworks{}, it appears that \languageDevs{} tend to recreate similar components (\listVmComponents{}\sm{really not a fan of macros.
+This makes editing really hard!}) \emph{on-top-of} the \framework{} rather than reuse the existing implementations from other \tvms{}; perhaps gaining fine-grained control over later optimizations at the cost of a significant amount of work.
 
 % People are playing with these ideas
 % -- Product Lines of Interpreters Using Truffle with Object Algebras
