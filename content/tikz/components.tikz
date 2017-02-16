@@ -3,18 +3,21 @@
 	edge from parent/.style ={}
 ]
 
-\node[obselete] (NewspeakPrelude) {Newspeak Prelude};
-\node[obselete, xshift=2cm, right of = NewspeakPrelude] (NewspeakParser) {Newspeak Parser};
+\node[somns] (NewspeakPrelude) {Newspeak Prelude};
+\node[somns, xshift=2cm, right of = NewspeakPrelude] (NewspeakParser) {Newspeak Parser};
 
-\node[exists, xshift=2cm, right of = NewspeakParser] (SOMnsAST) {SOMns AST};
-\node[exists, xshift=2cm, right of = SOMnsAST] (Truffle) {Truffle};
-\node[exists, xshift=2cm, right of = Truffle, below of = Truffle] (Graal) {Graal};
+\node[somns, xshift=2cm, right of = NewspeakParser] (SOMnsAST) {SOMns AST};
+\node[somns, xshift=2cm, right of = SOMnsAST] (Truffle) {Truffle};
+\node[somns, xshift=2cm, right of = Truffle, below of = Truffle] (Graal) {Graal};
 
-\node[created, yshift=-1cm, below of = SOMnsAST] (Translator) {Translator};
-\node[exists, yshift=-1cm, below of = Translator] (GraceAST) {Grace AST};
-\node[exists, xshift=-2cm, left of = GraceAST] (GraceParser) {Grace Parser};
-\node[exists, xshift=-2cm, left of = GraceParser] (GracePrelude) {Grace Prelude};
+\node[gracen, yshift=-1.75cm, below of = SOMnsAST] (Translator) {Translator};
+\node[grace, yshift=-0.75cm, below of = Translator] (GraceAST) {Grace AST};
+\node[grace, xshift=-2cm, left of = GraceAST] (GraceParser) {Grace Parser};
+\node[grace, xshift=-2cm, left of = GraceParser] (GracePrelude) {Grace Prelude};
 
+\draw[dashed] (-1, -1.75) -- (12, -1.75);
+\node at (1, -1.25) {SOMns};
+\node at (1, -2.25) {Grace Support};
 
 \draw[->>, dashed] (NewspeakPrelude) -- (NewspeakParser);
 \draw[->>, dashed] (NewspeakParser) -- (SOMnsAST);
