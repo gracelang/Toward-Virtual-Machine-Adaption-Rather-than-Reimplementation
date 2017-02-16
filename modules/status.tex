@@ -48,6 +48,13 @@ The translator is little more than an AST visitor that reads the nodes in one fo
     \label{fig:benchmark}
 \end{figure}
 
+% The JIT times do.    the non-JIT times do not.
+% ievel 81s vs 12s /   0.9 vs 0.8
+
+% we are having the benefit of the Truffle JIT + existing SOMns optimisations
+% that mean jitted we are roughly comparable to SOMns but non-kjitted we are 10 times slower.
+
+
 % Despite being tailored to Newspeak, SOMns can be easily adapted to Grace through our translator.
 
 To date SOMns has been under development for $22$ months: it is mostly compliant with Newspeak, and is as fast as other \JITing/ \vms/. In contrast Grace has been in development for around five years, without consideration of performance. Yet, in only three weeks, we have adapted a Truffle-based \vm/ to realize a new implementation that supports Grace's primitive operations; compound expressions; method and field declarations, and object instantiation. We do not yet support full inheritance nor type systems.
