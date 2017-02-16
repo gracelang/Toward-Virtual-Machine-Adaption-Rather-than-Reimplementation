@@ -3,22 +3,24 @@
 
 % ---------------------------------------------------------------------------- %
 % Outline
-%
-% VMs are good but hard to build
-% -- even with VM gramworks like Truffle & pypy
-% -- makes it hard for a new langauge to get a VM
-%
-% We are exploring the idea of making a VM for Grace
-% -- by adapting VM for NS
-%
-% Initial results are positive
-% -- benchmarks.
 
-% 
+\iftoggle{oldcomments}{
+    \sm{So, what I want to know, I guess is, what do we learn here?}
+}{}
+ 
 %
 % ---------------------------------------------------------------------------- %
 
 
-In this work, we adapt SOMns, a Truffle-based interpreter for Newspeak, to the Grace programming language. We highlight differences between the semantics of these languages and offer preliminary results showing that adaption is possible while retaining SOMns' performance, which is competitive with state-of-the-art custom-built \vms/. Through further experimentation, we intend to quantify how the implementation of the tailored \vm/; the flexibility of the host \vm/; and the similarities between the languages affect the potential for adaption and code sharing between language implementations.
+We adapt SOMns, a Truffle-based interpreter for Newspeak, to the Grace programming language. We highlight differences between the semantics of these languages and offer preliminary results showing that adaption is possible while retaining performance. The similarities between the languages affect the potential for adaption and code sharing between implementations. Through experimentation we intend explore how the design of the tailored implementation; the flexibility of the host \vm/; and language similarities affect adaptability, and by doing so hope to realize a set of mechanisms that can be easily extended to create optimized \vms/ for object-orientated languages.
 
-% So, what I want to know, I guess is, what do we learn here?
+
+% ---------------------------------------------------------------------------- %
+% Notes
+
+% Didn't make the cut
+
+    % which is competitive with state-of-the-art custom-built \vms/
+
+%
+% ---------------------------------------------------------------------------- %
