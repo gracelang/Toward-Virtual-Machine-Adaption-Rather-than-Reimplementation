@@ -24,7 +24,7 @@
 % Reusing an existing Grace parser, we translate Grace's \AST/ nodes into those used by SOMns to have a basic Grace \vm/,
 
 
-The translator is little more than an AST visitor that reads the nodes in one form and exports them in other; and in a few cases it composes together multiple nodes to preserve Grace's semantics. We reuse an existing an Grace parser and translate the resulting nodes into a valid SOMns \AST/, refer to \autoref{fig:components}. For the initial proof of concept, we have implemented expression nodes, numerals and string nodes, as well as nodes to maintain lexical scoping for blocks and methods. 
+The translator is little more than an AST visitor that reads the nodes in one form and exports them in other; and in a few cases it composes together multiple nodes to preserve Grace's semantics. We reuse an existing Grace parser and translate the resulting nodes into a valid SOMns \AST/, refer to \autoref{fig:components}. For the initial proof of concept, we have implemented expression nodes, numerals and string nodes, as well as nodes to maintain lexical scoping for blocks and methods. 
 
 \begin{figure}
     \centering
@@ -33,7 +33,7 @@ The translator is little more than an AST visitor that reads the nodes in one fo
             \input{content/tikz/components.tikz}
         }
     }
-    \caption{SOMns is built upon Truffle and Graal and implements an \AST/ for Newspeak. We parse programs written in Grace using an existing parser, and translate the generated nodes into those used by SOMns.}
+    \caption{SOMns is built upon Truffle and Graal and implements an \AST/ for Newspeak. We parse programs written in Grace using an existing parser, and translate the generated AST into the SOMns AST.}
     \label{fig:components}
 \end{figure}
 
@@ -44,7 +44,7 @@ The translator is little more than an AST visitor that reads the nodes in one fo
             \input{content/tikz/benchmarks.tikz}
         }
     }
-    \caption{The average running times for three harnessed benchmarks (with (G) and without the Graal optimization layer are presented). Each benchmark was implemented equivalently in both Grace and Newspeak. }
+    \caption{The average running times for three harnessed benchmarks (with (G) and without the Graal optimization layer). Each benchmark was implemented equivalently in both Grace and Newspeak.}
     \label{fig:benchmark}
 \end{figure}
 
