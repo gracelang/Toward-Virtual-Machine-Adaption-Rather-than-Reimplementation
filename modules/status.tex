@@ -18,7 +18,7 @@
 % 
 % ---------------------------------------------------------------------------- %
 
-Reusing an existing Grace parser, we translate Grace's \AST/ nodes into those used by SOMns to have a basic Grace \VM/, see \autoref{fig:components}.
+Reusing an existing Grace parser, we translate Grace's \AST/ nodes into those used by SOMns to have a basic Grace \vm/, see \autoref{fig:components}.
 Thus, we modified SOMns to use our translator. When called, the translator first parses Grace's prelude and then continues to the input program.
 Once an \AST/ has been formed, the translator composes the program representation based on SOMns's Truffle nodes. 
 
@@ -46,9 +46,9 @@ For the initial proof of concept, we implemented expression nodes, numerals and 
     \label{fig:benchmark}
 \end{figure}
 
-Despite being tailored to Newspeak, SOMns can be easily adapted to Grace through our translator. To date SOMns has been under development for $22$ months: it is mostly compliant with Newspeak, and is as fast as other \JITing/ \VMs/. In contrast Grace has been in development for around five years, without consideration of performance. In only three weeks, we have adapted a Truffle-based \VM/ to realize a new implementation that supports Grace's numeral and string literals, nesting of blocks, method and field declarations, and object and class instantiation and nesting with compliance to the Grace specification\footnotemark. \rr{Is what I say here true?} With the implmentation, Grace programs can be executed with comparable speed to Newspeak. As demonstrated in \autoref{fig:benchmark}, there is only a marginal loss of performance due to the additional translation step. In conclusion, the implementation retains much of the optimizations carefully tailored for Newspeak and required only a trivial amount of work.
+Despite being tailored to Newspeak, SOMns can be easily adapted to Grace through our translator. To date SOMns has been under development for $22$ months: it is mostly compliant with Newspeak, and is as fast as other \JITing/ \vms/. In contrast Grace has been in development for around five years, without consideration of performance. Yet, in only three weeks, we have adapted a Truffle-based \vm/ to realize a new implementation that supports Grace's primitive operations; compound expressions; method and field declarations, object instantiation; and class-based inheritance. Our implementation adheres correctly to the expected semantics, and Grace programs can be executed with comparable speed to Newspeak. As demonstrated in \autoref{fig:benchmark}, there is only a marginal loss of performance due to the additional translation step. In conclusion, the implementation retains much of the optimizations carefully tailored for Newspeak and required only a trivial amount of work.
 
 \footnotetext{\url{http://gracelang.org/documents/grace-spec-0.7.0.pdf}}
 
 
-% We have presented an experiment in which we realized a \VM/ for Grace from SOMns, while retaining much of the \AST/ optimizations. While further experiments are required before we can quantify the extent to which the similarity of the languages, the craft of SOMns, and the flexibility of Truffle contribute to the ability to make such an adaption.\mwh{While further experiments are required, what?} 
+% We have presented an experiment in which we realized a \vm/ for Grace from SOMns, while retaining much of the \AST/ optimizations. While further experiments are required before we can quantify the extent to which the similarity of the languages, the craft of SOMns, and the flexibility of Truffle contribute to the ability to make such an adaption.\mwh{While further experiments are required, what?} 
