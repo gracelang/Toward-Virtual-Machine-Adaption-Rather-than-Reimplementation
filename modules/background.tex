@@ -29,11 +29,11 @@
 %
 
 
-Newspeak\,\citep{Bracha2010} is a deeply nested object-oriented language designed to support libraries and family polymorphism (as in BETA and gBETA) \rcite{Madsen1993,Ernst2001}. Like Smalltalk, Newspeak is a pure object-oriented language, in that all computation proceeds via messages sent to objects. Additionally, Newspeak adopts Smalltalk's use of lambda-expressions (``blocks'') to encode control structures.
+Newspeak\,\citep{Bracha2010} is a deeply nested object-oriented language designed to support libraries and family polymorphism (as in BETA and gBETA) \cite{Madsen1993,Ernst2001}. Like Smalltalk, Newspeak is a pure object-oriented language, in that all computation proceeds via messages sent to objects. Additionally, Newspeak adopts Smalltalk's use of lambda-expressions (``blocks'') to encode control structures.
 
-Grace is also a deeply nested object-oriented language, designed to support education \rcite{Black2012}. Grace mixes static and dynamic types (like Strongtalk or C$\sharp$); makes heavy use of lambda expressions (like Smalltalk or Ruby); supports nested class definitions (like BETA); and uses method aliasing for inheritance (somewhat like Eiffel\mwh{Hmm}). Newspeak was a significant influence on Grace's design. Grace shares with Newspeak that static types generally do not affect a program's execution; that control structures are handled with lambda expressions; and that class definitions can be nested. A significant difference in Grace is that classes are defined in terms of objects and they can be nested freely (inside other objects, classes, methods, or lambda expressions), whereas in Newspeak objects are defined in terms of classes and classes can only be declared nested inside other classes.
+Grace is also a deeply nested object-oriented language, designed to support education \cite{Black2012}. Grace mixes static and dynamic types (like Strongtalk or C$\sharp$); makes heavy use of lambda expressions (like Smalltalk or Ruby); supports nested class definitions (like BETA). Newspeak was a significant influence on Grace's design. Grace shares with Newspeak that static types generally do not affect a program's execution; that control structures are handled with lambda expressions; and that class definitions can be nested. A significant difference in Grace is that classes are defined in terms of objects and they can be nested freely (inside other objects, classes, methods, or lambda expressions), whereas in Newspeak objects are defined in terms of classes and classes can only be declared nested inside other classes.
 
-Due to the similarites of the languages, we plan to create a \VM/ for Grace by adapting SOMns \rcite{stefanEventLoop} ~-- a high-performance \VM/ built using Truffle and the Graal \JITing/ compiler \rcite{Wurthinger:2013:OVR}. SOMns is a \emph{mostly} compliant implementation of the Newspeak specification.\footnotemark~ Compared to Newspeak, it forgoes support for image-based development, many reflective features, and a foreign function interface. Instead, it is meant as a research platform for investigating concurrency models.
+Due to the similarites of the languages, we plan to create a \VM/ for Grace by adapting SOMns \cite{Marr2015_eventloop} ~-- a high-performance \VM/ built using Truffle and the Graal \JITing/ compiler \cite{Wurthinger2013}. SOMns is a \emph{mostly} compliant implementation of the Newspeak specification.\footnotemark~ Compared to Newspeak, it forgoes support for image-based development, many reflective features, and a foreign function interface. Instead, it is meant as a research platform for investigating concurrency models.
 
 
 \footnotetext{\url{http://newspeaklanguage.org/spec/newspeak-spec.pdf}}
@@ -48,10 +48,10 @@ Due to the similarites of the languages, we plan to create a \VM/ for Grace by a
 %  Notes
 
 % Additionally, the rise of dynamic languages has led to a plethora of new VMs, since a completely new VM is typically developed for every new language. VMs are still mostly monolithic pieces of software. They are developed in C or C++, the languages that they aim to replace. In summary, VMs offer a lot of benefits for applications running on top of them, but they mostly do not utilize these benefits for themselves.
-% -- \rcite{Wimmer2012}{203}
+% -- \cite{Wimmer2012}{203}
 
 % The goal of our research is to investigate the impact of fine-grained modularity on VMs. We envision a VM following the “everything is extensible” paradigm, by combining best practices of existing VM design and existing module systems.
-% -- \rcite{Wimmer2012}{204}
+% -- \cite{Wimmer2012}{204}
 
 
 % ------------  Didn't make the cut
@@ -62,6 +62,8 @@ Due to the similarites of the languages, we plan to create a \VM/ for Grace by a
 	% While there are number of Newspeak implementations, we are interested in
 
 	% combine the benefits of Smalltalk's \ugh{deeply nested  ...} 
+
+    % and uses method aliasing for inheritance (somewhat like Eiffel\mwh{Hmm})
 
 % 
 % ---------------------------------------------------------------------------- %

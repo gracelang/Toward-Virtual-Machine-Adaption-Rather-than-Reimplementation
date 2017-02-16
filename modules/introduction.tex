@@ -30,21 +30,11 @@
 % ---------------------------------------------------------------------------- %
 % 
 
-With Truffle and RPython, language implementation frameworks have emerged that enable us to
-implement languages with the performance of state-of-the-art \vm/s by building
-simple interpreters.
-% \vm/ frameworks have emerged and are quickly becoming a core component to language implementation. 
-% Truffle and RPython are \VM/ frameworks: 
-With Truffle, \AST/ interpreters are built on top of a host \VM/, which provides for instance garbage collection and just-in-time compilation.
-% which a developer uses to author a simple \AST/ interpreter and through doing so automatically gain features such, and optimizations to the \AST/; and
-With the RPython toolchain, a tailored \vm/ is generated based on a simple interpreter. The toolchain adds for instance garbage collection and a tracing
-just-in-time compiler to enable competitive performance.
-Unsurprisingly, developers have already used these frameworks to successfully implement popular object-oriented programming languages (such as Python, Ruby, or JavaScript), with performance results as good as state of the art \JITing/ \VMs/ \citep{Marr2015,Marr:2016:AWFY}.
+With Truffle and RPython, language implementation frameworks have emerged that enable us to implement languages with the performance of state-of-the-art \vm/s by building simple interpreters. With Truffle, \AST/ interpreters are built on top of a host \VM/, which provides for instance garbage collection and just-in-time compilation. With the RPython toolchain, a tailored \vm/ is generated based on a simple interpreter. The toolchain adds for instance garbage collection and a tracing just-in-time compiler to enable competitive performance. Unsurprisingly, developers have already used these frameworks to successfully implement popular object-oriented programming languages (such as Python, Ruby, or JavaScript), with performance results as good as state of the art \JITing/ \VMs/ \citep{Marr2015_tracingVpartial,Marr2016}.
 
 Despite the multitude of language implementations built using these frameworks, it appears that developers tend to recreate similar components (e.g., basic control structures, \AST/ transformations, object storage) \emph{on-top-of} the framework rather than reuse existing implementations; perhaps doing so to gain fine-grained control over later optimizations (at the cost of a significant amount of work).
 
-Recently, the notion of developing a set of components that can be easily extended to create a tailored \VM/s have gained traction. For example, \rcitea{WoB2014}\mwh{The citation style breaks this reference} introduced a robust \emph{Object Storage Model}, which has now been integrated into the Truffle framework; and \citet{Inostroza2015} propose reusable components for languages with denotational semantics using \emph{Object Algebras} \rcite{Oliveira2012}. From much the same perspective, we propose to explore the potential to create new language implementations by extending existing ones built using language implementation frameworks.
-As an initial experiment, we adapt SOMns to realize a \VM/ for Grace.
+Recently, the notion of developing a set of components that can be easily extended to create tailored \VMs/ have gained traction. For example, \citet{WoB2014} introduced a robust \emph{Object Storage Model}, which has now been integrated into the Truffle framework; and \citet{Inostroza2015} propose reusable components for languages with denotational semantics using \emph{Object Algebras} \cite{Oliveira2012}. From much the same perspective, we propose to explore the potential to create new language implementations by extending existing ones built using language implementation frameworks. As an initial experiment, we adapt SOMns to realize a \VM/ for Grace.
 
 
 %
