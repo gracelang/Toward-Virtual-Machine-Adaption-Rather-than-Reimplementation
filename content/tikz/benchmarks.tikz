@@ -1,10 +1,10 @@
 \begin{tikzpicture}
     \begin{axis}[
         ybar, axis on top,
-        height=8cm, width=10.5cm,
+        height=8cm, width=16cm,
         bar width=0.4cm,
         ymajorgrids, tick align=inside,
-        major grid style={draw=white},
+        major grid style={draw=gray},
         enlarge y limits={value=.1,upper},
         ymin=0, ymax=15,
         axis x line*=bottom,
@@ -20,31 +20,36 @@
         },
         ylabel={Execution Time (seconds)},
         symbolic x coords={
-           Factorial,
+           1,
+           Sieve,
            Sum to Million,
-           Mandelbrot},
+           Mandelbrot,
+           1},
        xtick=data,
-       nodes near coords={
-        \pgfmathprintnumber[precision=0]{\pgfplotspointmeta}
-       }
     ]
-    \addplot [draw=none, fill=blue!30] coordinates {
-      (Factorial, 0.294)
-      (Sum to Million, 1.132)
-      (Mandelbrot, 0.224) };
-    \addplot [draw=none,fill=red!30] coordinates {
-      (Factorial,0.274)
-      (Sum to Million, 1.253) 
-      (Mandelbrot, 0.223)  };
-    \addplot [draw=none, fill=green!30] coordinates {
-      (Factorial, 3.431)
-      (Sum to Million,  15.223) 
-      (Mandelbrot, 3.129) };
-    \addplot [draw=none, fill=orange!30] coordinates {
-      (Factorial, 3.431)
-      (Sum to Million,  15.223) 
-      (Mandelbrot, 3.129) };
+    \addplot [draw=none, fill=col-lred] coordinates { % Grace
+      (Sieve,           12.225117)
+      (Sum to Million,  9.31109999)
+      (Mandelbrot,      12.2251173) };
+    \addplot [draw=none, fill=col-red] coordinates { % Grace on SOMns
+      (Sieve,           81.978964)
+      (Sum to Million,   1.678865)
+      (Mandelbrot,      13.445174) };
+    \addplot [draw=none, fill=col-dred] coordinates {  % Grace on SOMns (G)
+      (Sieve,            0.977399)
+      (Sum to Million,   0.236139)
+      (Mandelbrot,       0.859819) };
+    \addplot [draw=none, fill=col-dblue] coordinates { % Newspeak on SOMns (G)
+      (Sieve,            0.873562)
+      (Sum to Million,   0.213156)
+      (Mandelbrot,       0.338762) };
+    \addplot [draw=none, fill=col-blue] coordinates {  % Newspeak on SOMns
+      (Sieve,           12.225117)
+      (Sum to Million,   1.905146)   
+      (Mandelbrot,       4.296338) };
 
-    \legend{Grace G, Grace S, Newspeak S, Grace G}
+    \legend{Grace, Grace (S), Grace (S+G), Newspeak (S+G), Newspeak (S)}
     \end{axis}
+
+    \node at (0.75, 6.75) {81.9};
 \end{tikzpicture}
