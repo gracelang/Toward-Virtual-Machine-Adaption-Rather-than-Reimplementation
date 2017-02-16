@@ -7,3 +7,24 @@
 \usetikzlibrary{arrows, shapes, positioning, shadows, trees}
 \usepackage{pgfplotstable}
 \renewcommand*{\familydefault}{\sfdefault}
+
+\tikzset{
+    define color/.code 2 args={
+        \definecolor{#1}{hsb}{#2}
+    },
+    define color={col-pale}{0.4027, 0.08, 0.93},
+    define color={col-lred}{0.9888, 0.21, 0.94},
+    define color={col-red}{0.9888, 0.45, 0.92},
+    define color={col-dred}{0.9888, 0.59, 0.60},
+    define color={col-blue}{0.5277, 0.44, 0.83},
+    define color={col-dblue}{0.5277, 0.81, 0.64},
+%
+    basic/.style    = {draw=none, rounded corners=1pt,
+                       align=center, text width=2cm,
+                       font=\sffamily, rectangle,
+                       minimum height=1cm},
+    obselete/.style = {basic, fill=col-pale},
+    exists/.style   = {basic, fill=col-blue},
+    created/.style  = {basic, fill=col-red},
+}
+

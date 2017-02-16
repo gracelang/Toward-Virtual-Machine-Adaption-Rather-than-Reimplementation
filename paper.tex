@@ -16,7 +16,6 @@
 \usepackage{config/toggles}
 \usepackage{config/terminology}
 \usepackage{config/settings}
-\usepackage{config/citing}
 \usepackage{config/figures}
 \usepackage{config/collab}
 
@@ -115,9 +114,9 @@
 }{} 
 
 \section{Current Status}
-\label{s:progress}
-\iftoggle{progress}{
-    \input{modules/progress}
+\label{s:status}
+\iftoggle{status}{
+    \input{modules/status}
 }{}
 
 \section{Conclusion}
