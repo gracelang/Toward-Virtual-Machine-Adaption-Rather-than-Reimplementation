@@ -18,9 +18,13 @@
 % 
 % ---------------------------------------------------------------------------- %
 
-Reusing an existing Grace parser, we translate Grace's \AST/ nodes into those used by SOMns to have a basic Grace \vm/, see \autoref{fig:components}.
-Thus, we modified SOMns to use our translator. When called, the translator first parses Grace's prelude and then continues to the input program.
-Once an \AST/ has been formed, the translator composes the program representation based on SOMns's Truffle nodes. 
+
+% Thus, we modified SOMns to use our translator. When called, the translator first parses Grace's prelude and then continues to the input program. Once an \AST/ has been formed, the translator composes the program representation based on SOMns's Truffle nodes.
+
+% Reusing an existing Grace parser, we translate Grace's \AST/ nodes into those used by SOMns to have a basic Grace \vm/,
+
+
+The translator is little more than an AST visitor that reads the nodes in one form and exports them in other; and in a few cases it composes together multiple nodes to preserve Grace's semantics. We reuse an existing an Grace parser and translate the resulting nodes into a valid SOMns \AST/, refer to \autoref{fig:components}. For the initial proof of concept, we have implemented expression nodes, numerals and string nodes, as well as nodes to maintain lexical scoping for blocks and methods. 
 
 \begin{figure}
     \centering
@@ -33,8 +37,6 @@ Once an \AST/ has been formed, the translator composes the program representatio
     \label{fig:components}
 \end{figure}
 
-For the initial proof of concept, we implemented expression nodes, numerals and string nodes, as well as nodes to maintain lexical scoping for blocks and methods. The translator is little more than an AST visitor that reads the nodes in one form and exports them in other; and in a few cases it composes together multiple nodes to preserve Grace's semantics. 
-
 \begin{figure}
     \centering
     \makebox[\columnwidth][c]{
@@ -42,11 +44,15 @@ For the initial proof of concept, we implemented expression nodes, numerals and 
             \input{content/tikz/benchmarks.tikz}
         }
     }
-    \caption{The average running times for three harnessed benchmarks (with and without the Graal optimization layer are presented). Each benchmark was implemented equvilantely in both Grace and Newspeak. }
+    \caption{The average running times for three harnessed benchmarks (with and without the Graal optimization layer are presented). Each benchmark was implemented equivalently in both Grace and Newspeak. }
     \label{fig:benchmark}
 \end{figure}
 
-Despite being tailored to Newspeak, SOMns can be easily adapted to Grace through our translator. To date SOMns has been under development for $22$ months: it is mostly compliant with Newspeak, and is as fast as other \JITing/ \vms/. In contrast Grace has been in development for around five years, without consideration of performance. Yet, in only three weeks, we have adapted a Truffle-based \vm/ to realize a new implementation that supports Grace's primitive operations; compound expressions; method and field declarations, object instantiation; and class-based inheritance. Our implementation adheres correctly to the expected semantics, and Grace programs can be executed with comparable speed to Newspeak. As demonstrated in \autoref{fig:benchmark}, there is only a marginal loss of performance due to the additional translation step. In conclusion, the implementation retains much of the optimizations carefully tailored for Newspeak and required only a trivial amount of work.
+% Despite being tailored to Newspeak, SOMns can be easily adapted to Grace through our translator.
+
+To date SOMns has been under development for $22$ months: it is mostly compliant with Newspeak, and is as fast as other \JITing/ \vms/. In contrast Grace has been in development for around five years, without consideration of performance. Yet, in only three weeks, we have adapted a Truffle-based \vm/ to realize a new implementation that supports Grace's primitive operations; compound expressions; method and field declarations, and object instantiation. We do not yet support full inheritance nor type systems.
+
+Our implementation adheres correctly to the expected semantics and Grace programs can be executed with comparable speed to Newspeak. As indicated by the benchmarks in \autoref{fig:benchmark}, there is only a marginal loss of performance due to the additional translation step. In conclusion, the implementation retains much of the optimizations carefully tailored for Newspeak and required only a relatively small amount of work.
 
 \footnotetext{\url{http://gracelang.org/documents/grace-spec-0.7.0.pdf}}
 
