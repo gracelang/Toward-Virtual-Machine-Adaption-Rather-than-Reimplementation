@@ -27,10 +27,6 @@
            1},
        xtick=data,
     ]
-    \addplot [draw=none, fill=col-lred] coordinates { % Grace
-      (Sieve,           12.225117)
-      (Sum to Million,  9.31109999)
-      (Mandelbrot,      12.2251173) };
     \addplot [draw=none, fill=col-red] coordinates { % Grace on SOMns
       (Sieve,           81.978964)
       (Sum to Million,   1.678865)
@@ -48,8 +44,8 @@
       (Sum to Million,   1.905146)   
       (Mandelbrot,       4.296338) };
 
-    \legend{Grace, Grace (S), Grace (S+G), Newspeak (S+G), Newspeak (S)}
+    \legend{Grace, Grace (G), Newspeak (G), Newspeak}
     \end{axis}
 
-    \node at (0.75, 6.75) {81.9};
+    \node at (0.5, 6.75) {81.9};
 \end{tikzpicture}
