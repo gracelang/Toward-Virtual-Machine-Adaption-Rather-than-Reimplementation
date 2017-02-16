@@ -1,6 +1,6 @@
 # Toward Virtual Machine Adaption Rather than Reimplementation
 
-An extended abstract proposing a presentation on our efforts to adapt a virtual machine tailored for one programming language to another. Avaliable in [preprint](http://richardroberts.co.nz/Writing/Preprints/TowardVirtualMachineAdaptionRatherthanReimplementation.pdf).
+An extended abstract proposing a presentation on our efforts to adapt a virtual machine tailored for one programming language to another. Avaliable in [preprint](http://richardroberts.co.nz/public/writing/Preprints/TowardVirtualMachineAdaptionRatherThanReimplementation.pdf).
 
 - [Richard Roberts](https://github.com/richard-roberts)
 - [Stefan Maar](https://github.com/smarr)
