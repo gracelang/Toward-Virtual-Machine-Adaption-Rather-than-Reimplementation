@@ -1,39 +1,12 @@
-<br>
+# Toward Virtual Machine Adaption Rather than Reimplementation
 
-Todo
-====
+An extended abstract proposing a presentation on our efforts to adapt a virtual machine tailored for one programming language to another. Avaliable in [preprint](http://richardroberts.co.nz/Writing/Preprints/TowardVirtualMachineAdaptionRatherthanReimplementation.pdf).
 
-<br>
+- [Richard Roberts](https://github.com/richard-roberts)
+- [Stefan Maar](https://github.com/smarr)
+- [Michael Homer](https://github.com/mwh)
+- [James Noble](https://github.com/kjx)
 
-### Richard
+## Abstract
 
-- Edit progress (waiting on feedback)
-- Add results from benchmarks
-- Fix placement and style of figures
-
-
-<br>
-
-### James
-
-What were you suggesting by `\cite{stefanEventLoop,Truffle,Graal}`? 
-  
-- Do you mean that I should just one or two papers on Truffle and Graal,
-- and then ask Stefan what stefanEventLoop is?
-
-
-<br>
-
-### Stefan
-
-- Would you mind adding a sentence or two on *SOMns* at the end of the background section?
-- Refer to `modules/background/notes-on-somns.tex`
-
-
-<br>
-
-### Other
-
-- Are there any acknowledgements?
-
-
+In this work, we adapt SOMns, a Truffle-based interpreter for Newspeak, to the Grace programming language. We highlight differences between the semantics of these languages and offer preliminary results showing that adaption is possible while retaining SOMns’ performance, which is competitive with state-of-the-art custom-built virtual machines. Through further experimentation, we intend to quantify how the implementation of the tailored virtual machine; the flexibility of the host virtual machine; and the similarities between the languages affect the potential for adaption and code sharing between language implementations.
