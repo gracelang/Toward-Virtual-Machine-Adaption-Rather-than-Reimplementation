@@ -22,15 +22,15 @@
 	\sm{really not a fan of macros. This makes editing really hard!}
 }
 
-% 
+%
 % ---------------------------------------------------------------------------- %
 
 
 
 % ---------------------------------------------------------------------------- %
-% 
+%
 
-Language implementation frameworks enable us to build simple interpreters with good performance. With Truffle \citep{Wurthinger2013}, \AST/ interpreters are built on top of a host \vm/, which provides garbage collection and just-in-time compilation. With the RPython toolchain, a tailored \vm/ is generated based on a simple interpreter. The RPython toolchain also adds garbage collection and a tracing just-in-time compiler. Developers have already used these frameworks to successfully implement popular object-oriented programming languages (such as Python, Ruby, or JavaScript), with performance results as good as state of the art \JITing/ \vms/ \citep{Marr2015_tracingVpartial,Marr2016}.
+Language implementation frameworks enable us to build simple interpreters with good performance. With Truffle \citep{Wurthinger2013}, \AST/ interpreters are built on top of a host \vm/ that provides garbage collection and just-in-time compilation. With the RPython toolchain, a tailored \vm/ is generated based on a simple interpreter. The RPython toolchain also adds garbage collection and a tracing just-in-time compiler. Developers have already used these frameworks to successfully implement popular object-oriented programming languages (such as Python, Ruby, or JavaScript), with performance results as good as state of the art \JITing/ \vms/ \citep{Marr2015_tracingVpartial,Marr2016}.
 
 Despite the multitude of language implementations built using these frameworks, it appears that implementors tend to recreate similar components (e.g., basic control structures, \AST/ transformations, object storage) \emph{on top of} the framework rather than reuse existing implementations; doing so to gain fine-grained control over later optimizations (at the cost of a significant amount of work).
 
@@ -50,15 +50,15 @@ Recently, the notion of developing a set of components that can be easily extend
 % eg Product Lines of Interpreters Using Truffle with Object Algebras
 % 	 Modular interpreters for the masses: implicit context propagation using object algebras
 
-% Stefan - Object storage is provided by truffle, so, the fact that SOMns has its own is somewhat an artifact of ‘history’, and perhaps somewhat an optimization/step to avoid dependence on closed-source Oracle features. There are other aspects like storage strategies (think of our arrays), which haven’t been included in truffle yet, but are for instance in RPython: 
+% Stefan - Object storage is provided by truffle, so, the fact that SOMns has its own is somewhat an artifact of ‘history’, and perhaps somewhat an optimization/step to avoid dependence on closed-source Oracle features. There are other aspects like storage strategies (think of our arrays), which haven’t been included in truffle yet, but are for instance in RPython:
 % -- http://dl.acm.org/citation.cfm?id=2816716
 
-% Richard - The original idea of a \emph{\vm/} was a tool that compiled a program from an abstract into machine executable code, useful in that developers could implement a method to parse their language into the \ir understood by the \vm/. 
+% Richard - The original idea of a \emph{\vm/} was a tool that compiled a program from an abstract into machine executable code, useful in that developers could implement a method to parse their language into the \ir understood by the \vm/.
 
     % Stefan - I don’t think so, p-code might be the first example of a virtual machine. There was no translation, it was just to avoid targeting a specific hardware machine, because back then they had many more different architectures than 3-4 people care about today
 
 
-% Richard - An interpreter is collections of tools for executing a program. Lexical analysis encodes an intermeditary representation with the logic of the program and then that representation is visited to realize execution. From its outset, practitioners have created a multitude of different interpreters for different languages, each with a toolkit based on similar conventions but unique in its implementation (often required to support the semantics of the language being interpreted). 
+% Richard - An interpreter is collections of tools for executing a program. Lexical analysis encodes an intermeditary representation with the logic of the program and then that representation is visited to realize execution. From its outset, practitioners have created a multitude of different interpreters for different languages, each with a toolkit based on similar conventions but unique in its implementation (often required to support the semantics of the language being interpreted).
 
-% 
+%
 % ---------------------------------------------------------------------------- %

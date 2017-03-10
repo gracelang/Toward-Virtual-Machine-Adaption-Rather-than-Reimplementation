@@ -15,7 +15,7 @@
     \mwh{It would be good to say which functionalies are supported so far, and how those were selected (because they matched what SOMns already does? because they matched existing Grace benchmarks?). That may affect how any metric results should be interpreted.}
 }
 
-% 
+%
 % ---------------------------------------------------------------------------- %
 
 
@@ -24,7 +24,7 @@
 % Reusing an existing Grace parser, we translate Grace's \AST/ nodes into those used by SOMns to have a basic Grace \vm/,
 
 
-The translator is little more than an AST visitor that reads the nodes in one form and exports them in other; and in a few cases it composes together multiple nodes to preserve Grace's semantics. We reuse an existing Grace parser and translate the resulting nodes into a valid SOMns \AST/, refer to \autoref{fig:components}. For the initial proof of concept, we have implemented expression nodes, numerals and string nodes, as well as nodes to maintain lexical scoping for blocks and methods. 
+\rr{Due to the similarities of the languages, it is possible execute Grace programs using SOMns with little more than a specialized AST visitor that translates Grace's nodes into those that can be executed directly by SOMns; in a few cases it composes together multiple nodes to preserve semantics. As illustrated in \autoref{fig:components}, the translator is all the is needed for the adaption (we reuse an existing Grace parser).} For the initial proof of concept, we have implemented expression nodes, numerals and string nodes, as well as nodes to maintain lexical scoping for blocks and methods.
 
 \begin{figure}
     \centering
@@ -57,11 +57,11 @@ The translator is little more than an AST visitor that reads the nodes in one fo
 
 % Despite being tailored to Newspeak, SOMns can be easily adapted to Grace through our translator.
 
-To date SOMns has been under development for $22$ months: it is mostly compliant with Newspeak, and is as fast as other \JITing/ \vms/. In contrast Grace has been in development for around five years, without consideration of performance. Yet, in only three weeks, we have adapted a Truffle-based \vm/ to realize a new implementation that supports Grace's primitive operations; compound expressions; method and field declarations, and object instantiation. We do not yet support full inheritance nor type systems.
+To date SOMns has been under development for $22$ months, and is as fast as other \JITing/ \vms/. In contrast Grace has been in development for around five years, without consideration of performance thus far. Yet, in only three weeks, we have adapted a Truffle-based \vm/ to realize a new implementation that supports Grace's primitive operations; compound expressions; method and field declarations, and object instantiation. We do not yet support full inheritance nor type systems.
 
-Our implementation adheres correctly to the expected semantics and Grace programs can be executed with comparable speed to Newspeak. As indicated by the benchmarks in \autoref{fig:benchmark}, there is only a marginal loss of performance due to the additional translation step. In conclusion, the implementation retains much of the optimizations carefully tailored for Newspeak and required only a relatively small amount of work.
+Our implementation adheres correctly to the expected semantics and Grace programs can be executed with comparable speed to Newspeak. As indicated by the benchmarks in \autoref{fig:benchmark}, the loss of performance due to the additional translation step is marginal. The implementation retains much of the optimizations that were carefully tailored for Newspeak but required only a trivial amount of work by comparison.
 
 \footnotetext{\url{http://gracelang.org/documents/grace-spec-0.7.0.pdf}}
 
 
-% We have presented an experiment in which we realized a \vm/ for Grace from SOMns, while retaining much of the \AST/ optimizations. While further experiments are required before we can quantify the extent to which the similarity of the languages, the craft of SOMns, and the flexibility of Truffle contribute to the ability to make such an adaption.\mwh{While further experiments are required, what?} 
+% We have presented an experiment in which we realized a \vm/ for Grace from SOMns, while retaining much of the \AST/ optimizations. While further experiments are required before we can quantify the extent to which the similarity of the languages, the craft of SOMns, and the flexibility of Truffle contribute to the ability to make such an adaption.\mwh{While further experiments are required, what?}
