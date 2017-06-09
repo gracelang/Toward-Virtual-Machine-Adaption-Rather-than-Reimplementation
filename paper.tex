@@ -8,7 +8,7 @@
 
 % Standard
 \usepackage[utf8]{inputenc}
-\usepackage{hyperref}
+% \usepackage{hyperref}
 \usepackage[pass,letterpaper]{geometry}
 \usepackage{xspace}
 
@@ -17,7 +17,7 @@
 \usepackage{config/terminology}
 \usepackage{config/settings}
 \usepackage{config/figures}
-\usepackage{config/collab}
+\usepackage[hidecomments,hideedits]{config/collab}
 
 \collabAuthor{sm}{red}{Stefan}
 \collabAuthor{rr}{blue}{Richard}
@@ -25,14 +25,14 @@
 \collabAuthor{mwh}{pink}{Michael}
 
 % Meta
-% \usepackage[bookmarks=true,bookmarksnumbered=true,
-%      pdfpagemode={UseOutlines},plainpages=false,pdfpagelabels=true,
-%      colorlinks=true,linkcolor={black},citecolor={black},urlcolor={black},
-%      pdftitle={\paperTitle{}},%
-%      pdfsubject={\paperSubject{}},%
-%      pdfauthor={\paperAuthors{}},%
-%      pdfkeywords={\paperKeywords{}},
-%      pdftex]{hyperref}
+\usepackage[bookmarks=true,bookmarksnumbered=true,
+     pdfpagemode={UseOutlines},plainpages=false,pdfpagelabels=true,
+     colorlinks=true,linkcolor={black},citecolor={black},urlcolor={black},
+     pdftitle={\paperTitle{}},%
+     pdfsubject={\paperSubject{}},%
+     pdfauthor={\paperAuthors{}},%
+     pdfkeywords={\paperKeywords{}},
+     pdftex]{hyperref}
 
 %
 % ---------------------------------------------------------------------------- %
